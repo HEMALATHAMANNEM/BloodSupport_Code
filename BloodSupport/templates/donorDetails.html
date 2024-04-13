@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 class="alert alert-warning text-center"> {{i.firstname}} {{i.lastname}}  </h3>
+            <ul class="text-white">   
+                <li><strong>ID: </strong>{{i.id}}</li>
+                <li><strong>First Name: </strong>{{i.firstname}}</li>
+                <li><strong>Last Name: </strong>{{i.lastname}}</li>
+                <li><strong>Email: </strong>{{i.email}}</li>
+                <li><strong>Blood Group: </strong>{{i.bloodgroup}}</li>
+                <li><strong>Phone number: </strong>{{i.phone}}</li>
+                <li><strong>Address: </strong>{{i.address}}</li>
+
+                    <form action="{% url  'deletedonor' i.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <i class="fa-solid fa-trash "></i>
+                        </button>
+                    </form>
+                
+            </ul>
+            <div style="display: flex;justify-content: center;align-items: center;height: 10vh;">
+                <a href="{% url 'admindashboard' %}" class="btn btn-secondary"> Back to dashboard</a>
+            </div>
+</div>
+{% endblock content %}

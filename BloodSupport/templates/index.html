@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" >    
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
+        {% for i in data %}
+        <div class="py-3">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title bg-danger">{{i}}</h5>
+                    <p class="card-text">
+                        <a href="{% url 'requireddonordetails' i %}"> <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %} 
+      </div>
+</div>
+{% endblock content %}

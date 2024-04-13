@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card text-white bg-secondary mb-3" >
+        <div class="card-header text-center">{{i.firstname}} {{i.lastname}}</div>
+        <div class="card-body">
+            <p class="card-text">
+                <ul>
+                    <li><strong>ID: </strong>{{i.id}}</li>
+                    <li><strong>First Name: </strong>{{i.firstname}}</li>
+                    <li><strong>Last Name: </strong>{{i.lastname}}</li>
+                    <li><strong>Username: </strong>{{i.username}}</li>
+                    <li><strong>Email: </strong>{{i.email}}</li>
+                    <li><strong>Phone Number: </strong>{{i.phone}}</li>
+                    <li><strong>Blood Group: </strong>{{i.bloodgroup}}</li>
+                    <li><strong>Address: </strong>{{i.address}}</li>
+                        
+                        <button class="my-2">
+                            <a href="{% url 'updatedonor' i.id %}">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        </button>
+                
+                        <form action="{% url  'deletedonor' i.id %}" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit">
+                                <i class="fa-solid fa-trash "></i>
+                            </button>
+                        </form>
+                    
+                    <div style="display: flex;justify-content: center;align-items: center;height: 10vh;">
+                        <a class="my-2 btn btn-danger" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    
+</div>
+{% endblock content %} 

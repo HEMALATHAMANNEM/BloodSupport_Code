@@ -1,0 +1,38 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+{% include 'base.html' %}
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <div class="content-wrapper" style="height: 480px;">
+            <section>
+                <div class="container">
+                  <div style="height: 90px;">
+                  </div>
+                  <div class="row" style="display: flex;justify-content: center;align-items: center;height: 10vh;">
+                    <div class=" col-12 col-md-6 py-3 ms-3">
+                        <div class="card text-center h-100">
+                            <img class="card-img-top"
+                                src="https://cdn.punchng.com/wp-content/uploads/2021/06/12202324/blood-b.jpg"
+                                alt="Card image cap" style="display: flex;justify-content: center;align-items: center;height: 10vh;width:140; height:180px">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <a href="{% url 'donorspage' %}" class="btn btn-danger"><span>Donors</span></a>
+                                <a href="{% url 'bloodgroups' %}" class="btn btn-danger"><span>Blood Groups</span></a>
+                              
+                               </p>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+            </section>
+        </div>
+        <div  style="display: flex;justify-content: center;align-items: center;height: 10vh;">
+            <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+        </div>
+        {% include "footer.html" %}
+    </div>
+</body>
+</html>

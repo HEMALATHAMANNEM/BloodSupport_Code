@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container " style="display: flex;justify-content: center;align-items: center;">    
+    <div class="row p-4">
+        <div class="p-3">
+            <div class="card text-center h-40" style="display: flex;justify-content: center;align-items: center; width: 500px; height: 400px;">
+                <div class="card-body">
+                    <img src="https://i.postimg.cc/Nf4SH6ss/d1.jpg" alt="Blood donation" style="display: flex;justify-content: center;align-items: center; height: 10vh; width:500px; height:400px;"/>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div class="row p-4">
+        <div class="p-3">
+            <div class="card text-center h-40" style="display: flex;justify-content: center;align-items: center; width: 500px; height: 400px;">
+                <div class="card-body">
+                   <img src="https://i.postimg.cc/xTcMvYYX/d2.jpg" alt="Blood Donation Camp" style="display: flex;justify-content: center;align-items: center; height: 10vh; width: 500px; height: 400px;"/>
+               </div>
+            </div>  
+           </div>
+    </div>     
+</div>
+<div class="container">
+    <div style="display: flex;justify-content: center;align-items: center;height: 10vh;">
+        <a  href="{% url 'login' %}" class="btn btn-primary"> Login </a>   
+   </div>   
+   <p class="text-white" style="display: flex;justify-content: center;align-items: center;height: 10vh;">Contact hema@gmail.com for donor details</p>
+</div>
+{% endblock content %}

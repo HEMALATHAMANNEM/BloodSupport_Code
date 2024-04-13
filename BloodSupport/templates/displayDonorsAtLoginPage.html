@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 class="text-white text-center">Donor Records</h3>
+    <table class="table my-5">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr class="text-white">
+                <td>{{i.firstname}}</td>
+                <td>{{i.lastname}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.bloodgroup}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.address}}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

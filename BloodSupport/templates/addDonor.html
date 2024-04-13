@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <!-- Forms  -->
+    <div class="row">
+        <div class="col col-6 offset-3">
+            <h3 class="text-green text-center">Donor Registation Form</h3>
+            <form method="post" class="text-white">
+                {% csrf_token %}
+                {{form.as_p}}
+                <label for="password2">Conform Password</label>
+                <input type="password" class="form-control" id="password2" name="password2">
+                <input type="submit" value="Submit" class="btn btn-success mt-4 mx-5">
+                <a href="{% url 'login' %}" class="btn btn-primary mt-4 mx-5"> Back to Home</a>
+            </form>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
